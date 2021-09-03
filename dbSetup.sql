@@ -9,10 +9,8 @@ CREATE TABLE IF NOT EXISTS accounts(
 
 CREATE TABLE recipes(  
     id int NOT NULL primary key AUTO_INCREMENT comment 'primary key',
-    create_time DATETIME COMMENT 'create time',
-    update_time DATETIME COMMENT 'update time',
     title varchar(255) comment 'recipe title',
-    description varchar(255) comment 'recipe description',
+    body varchar(255) comment 'recipe description',
     cookTime int comment 'recipe cook time',
     prepTime int comment 'recipe prep time',
     creatorId VARCHAR(255) COMMENT 'creatorId',

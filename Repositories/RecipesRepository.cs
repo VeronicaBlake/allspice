@@ -45,16 +45,16 @@ namespace allspice.Repositories
         }
 
         internal Recipe Create(Recipe newRecipe)
-        {
-            string sql = @"
-            INSERT INTO recipes 
-            (description, title, cookTime, prepTime, creatorId)
-            VALUES
-            (@Description, @Title, @CookTime, @PrepTime, @CreatorId);
-            SELECT LAST_INSERT_ID();
-            ";
-            int id = _db.ExecuteScalar<int>(sql, newRecipe);
-            return Get(id);
-        }
+    {
+      string sql = @"
+        INSERT INTO recipes
+        (title, body, cookTime, prepTime, creatorId)
+        VALUES
+        (@Title, @Body, @CookTime, @PrepTime, @CreatorId);
+        SELECT LAST_INSERT_ID();
+        ";
+      int id = _db.ExecuteScalar<int>(sql, newRecipe);
+      return Get(id);
+    }
     }
 }
